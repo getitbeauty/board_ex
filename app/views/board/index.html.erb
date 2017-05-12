@@ -1,14 +1,27 @@
-<div class = "container">
-    <h1><b> 게시판 만들기 with CRUD</h1>
-    
-    <h2><a href='/write'>글쓰기</a></h2>
-    
-    <% @everypost. each do |post| %>
-        <%= post.id %>번 게시물  <%= post.created_at %> 작성됨 <br>
-        제목 : <%= post.title %><br>
-        내용 : <%= post.content %><br>
-        <a href ="/destroy/<%= post.id %>"> [삭제] </a>
-        <a href ="/edit/<%= post.id %>"> [수정] </a> <hr>
-    <% end %>
+<!DOCTYPE>
+<html lang="ko">
+    <head>
+      <style>
+        h1,h2 { text-align: center; }
+      </style>
+    </head>
 
-</div>
+    <body>
+    <h1><b> 게시판 만들기 with CRUD</h1>
+        <section>
+            <h2><a href='/write'>글쓰기</a></h2>
+            
+            <div class="container">
+                <% @everypost. each do |post| %>
+                    <div>
+                        <%= post.id %>번 게시물  <%= post.created_at %> 작성됨 <br>
+                        제목 : <%= post.title %><br>
+                        내용 : <%= post.content %><br>
+                        <a href ="/destroy/<%= post.id %>"> [삭제] </a>
+                        <a href ="/edit/<%= post.id %>"> [수정] </a> <hr>
+                    </div>
+                <% end %>
+            </div>
+        </section>
+    </body>
+</html>
