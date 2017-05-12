@@ -1,0 +1,14 @@
+<div class = "container">
+    <h1><b> 게시판 만들기 with CRUD</h1>
+    
+    <h2><a href='/write'>글쓰기</a></h2>
+    
+    <% @everypost. each do |post| %>
+        <%= post.id %>번 게시물  <%= post.created_at %> 작성됨 <br>
+        제목 : <%= post.title %><br>
+        내용 : <%= post.content %><br>
+        <a href ="/destroy/<%= post.id %>"> [삭제] </a>
+        <a href ="/edit/<%= post.id %>"> [수정] </a> <hr>
+    <% end %>
+
+</div>
